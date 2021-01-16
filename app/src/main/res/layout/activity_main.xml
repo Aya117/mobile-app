@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background"
+    android:orientation="vertical"
+    android:paddingRight="10dp"
+    tools:context=".MainActivity">
+
+    <Button
+        android:id="@+id/btnshow"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="200dp"
+        android:layout_marginTop="300dp"
+        android:background="#AB7884C6"
+        android:drawableLeft="@android:drawable/ic_menu_send"
+        android:onClick="showMobile"
+        android:text="Show All Items  "
+        android:textAlignment="center"
+        android:textColor="#100F0F" />
+    <Button
+        android:id="@+id/btnbuy"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="200dp"
+        android:layout_marginTop="30dp"
+        android:background="#AB7884C6"
+        android:drawableLeft="@android:drawable/ic_menu_send"
+        android:onClick="buyitem"
+        android:text="buy item"
+        android:textAlignment="center"
+        android:textColor="#100F0F" />
+
+
+</androidx.appcompat.widget.LinearLayoutCompat>
