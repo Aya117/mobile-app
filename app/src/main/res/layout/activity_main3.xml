@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#CC90D6"
     android:orientation="vertical"
     android:padding="16dp"
     tools:context=".MainActivity3">
@@ -22,16 +22,15 @@
             android:text="Longitude"
             android:textColor="@color/colorPrimary"
             android:textSize="32sp"
-            android:textStyle="bold"
-            />
+            android:textStyle="bold" />
 
         <TextView
             android:id="@+id/tv_longitude"
-            android:layout_width="61dp"
-            android:layout_height="54dp"
+            android:layout_width="150dp"
+            android:layout_height="60dp"
             android:text="0.0"
-            android:textSize="24sp"
-            android:textAlignment="center"/>
+            android:textAlignment="center"
+            android:textSize="24sp" />
 
     </LinearLayout>
 
@@ -51,11 +50,11 @@
 
         <TextView
             android:id="@+id/tv_latitude"
-            android:layout_width="62dp"
-            android:layout_height="54dp"
+            android:layout_width="150dp"
+            android:layout_height="60dp"
             android:text="0.0"
-            android:textSize="24sp"
-            android:textAlignment="center"/>
+            android:textAlignment="center"
+            android:textSize="24sp" />
     </LinearLayout>
 
     <Button
@@ -76,12 +75,12 @@
             android:layout_height="56dp"
             android:text="Name"
             android:textColor="@color/colorPrimary"
-            android:textSize="20dp"/>
+            android:textSize="20dp" />
 
         <EditText
             android:layout_width="154dp"
             android:layout_height="wrap_content"
-            android:inputType="text"/>
+            android:inputType="text" />
     </LinearLayout>
 
     <LinearLayout
@@ -95,12 +94,12 @@
             android:layout_height="63dp"
             android:text="Address"
             android:textColor="@color/colorPrimary"
-            android:textSize="20dp"/>
+            android:textSize="20dp" />
 
         <EditText
             android:layout_width="156dp"
             android:layout_height="wrap_content"
-            android:inputType="text"/>
+            android:inputType="text" />
     </LinearLayout>
 
     <LinearLayout
@@ -114,12 +113,12 @@
             android:layout_height="68dp"
             android:text="Phone Number"
             android:textColor="@color/colorPrimary"
-            android:textSize="20dp"/>
+            android:textSize="20dp" />
 
         <EditText
             android:layout_width="162dp"
             android:layout_height="wrap_content"
-            android:inputType="number"/>
+            android:inputType="number" />
     </LinearLayout>
 
     <Spinner
@@ -128,6 +127,7 @@
         android:layout_height="49dp"
         android:layout_gravity="center"
         android:autofillHints="Phone Name" />
+
     <Button
         android:id="@+id/save"
         android:layout_width="wrap_content"
