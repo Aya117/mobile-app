@@ -10,6 +10,14 @@ public class phone {
     private String weight;
     private String price;
 
+    public phone(String screenSize, String operatingSystem, String battery, String memory, String weight, String price) {
+        ScreenSize = screenSize;
+        this.operatingSystem = operatingSystem;
+        this.battery = battery;
+        Memory = memory;
+        this.weight = weight;
+        this.price = price;
+    }
 
     public phone(String name, int imageID, String screenSize, String operatingSystem, String battery, String memory,
                  String weight, String price) {
