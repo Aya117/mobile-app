@@ -1,9 +1,5 @@
 package edu.cs.birzeit.mobileapp;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.app.ActivityCompat;
-
 import android.Manifest;
 import android.annotation.SuppressLint;
 import android.content.Context;
@@ -16,9 +12,21 @@ import android.os.Looper;
 import android.provider.Settings;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
+
+import com.android.volley.AuthFailureError;
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.StringRequest;
+import com.android.volley.toolbox.Volley;
 import com.google.android.gms.location.FusedLocationProviderClient;
 import com.google.android.gms.location.LocationCallback;
 import com.google.android.gms.location.LocationRequest;
@@ -27,11 +35,17 @@ import com.google.android.gms.location.LocationServices;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 
+import java.util.HashMap;
+import java.util.Map;
+
 public class MainActivity3 extends AppCompatActivity {
 
     Button btLocation;
     TextView tvLatitude,tvLongitude;
-
+    EditText t1,t2,t3,t4,tv_longitude,tv_latitude;
+    Button submt;
+   // 192.168.0.106
+    private static final String url="http://192.168.1.111/web/ass/addUser.php";
     FusedLocationProviderClient fusedLocationProviderClient;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -58,6 +72,65 @@ public class MainActivity3 extends AppCompatActivity {
                 }
             }
         });
+        submt= findViewById(R.id.save);
+        submt.setOnClickListener(
+                new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                insertdata();
+            }
+        });
+    }
+
+    private void insertdata() {
+        t1=findViewById(R.id.names);
+        t2=findViewById(R.id.addres);
+        t3=findViewById(R.id.num);
+        t4=findViewById(R.id.type);
+        tv_longitude=findViewById(R.id.tv_longitude);
+        tv_latitude=findViewById(R.id.tv_latitude);
+
+        final String N = t1.getText().toString();
+        final String AD = t2.getText().toString();
+        final String NU = t3.getText().toString();
+        final String TY = t4.getText().toString();
+        final String lo = tv_longitude.getText().toString();
+        final String la = tv_latitude.getText().toString();
+
+        StringRequest request = new StringRequest(Request.Method.POST, url, new Response.Listener<String>() {
+            @Override
+            public void onResponse(String response) {
+                t1.setText("");
+                t2.setText("");
+                t3.setText("");
+                t4.setText("");
+                tv_longitude.setText("");
+                tv_latitude.setText("");
+                Toast.makeText(getApplicationContext(),response.toString(),Toast.LENGTH_LONG).show();
+            }
+        }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                Toast.makeText(getApplicationContext(),error.toString(),Toast.LENGTH_LONG).show();
+
+            }
+        }){
+            @Override
+            protected Map<String,String> getParams()throws AuthFailureError
+            {
+                Map<String,String> param = new HashMap<String,String>();
+                param.put("name",N);
+                param.put("address",AD);
+                param.put("phone",NU);
+                param.put("pone_type",TY);
+                param.put("longitude",lo);
+                param.put("latitude",la);
+                return param;
+            }
+        };
+
+        RequestQueue queue = Volley.newRequestQueue(getApplicationContext());
+        queue.add(request);
     }
 
     @Override

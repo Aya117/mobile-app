@@ -9,7 +9,6 @@
     android:padding="16dp"
     tools:context=".MainActivity3">
 
-
     <LinearLayout
         android:layout_width="376dp"
         android:layout_height="77dp"
@@ -24,7 +23,7 @@
             android:textSize="32sp"
             android:textStyle="bold" />
 
-        <TextView
+        <EditText
             android:id="@+id/tv_longitude"
             android:layout_width="150dp"
             android:layout_height="60dp"
@@ -48,7 +47,7 @@
             android:textSize="32sp"
             android:textStyle="bold" />
 
-        <TextView
+        <EditText
             android:id="@+id/tv_latitude"
             android:layout_width="150dp"
             android:layout_height="60dp"
@@ -80,7 +79,7 @@
         <EditText
             android:layout_width="154dp"
             android:layout_height="wrap_content"
-            android:inputType="text" />
+            android:id="@+id/names"/>
     </LinearLayout>
 
     <LinearLayout
@@ -99,7 +98,7 @@
         <EditText
             android:layout_width="156dp"
             android:layout_height="wrap_content"
-            android:inputType="text" />
+            android:id="@+id/addres"/>
     </LinearLayout>
 
     <LinearLayout
@@ -118,15 +117,26 @@
         <EditText
             android:layout_width="162dp"
             android:layout_height="wrap_content"
-            android:inputType="number" />
+            android:id="@+id/num"/>
     </LinearLayout>
 
-    <Spinner
-        android:id="@+id/spacer"
-        android:layout_width="168dp"
-        android:layout_height="49dp"
-        android:layout_gravity="center"
-        android:autofillHints="Phone Name" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="181dp"
+            android:layout_height="68dp"
+            android:text="Phone type"
+            android:textColor="@color/colorPrimary"
+            android:textSize="20dp" />
+
+        <EditText
+            android:layout_width="168dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/type"/>
+    </LinearLayout>
 
     <Button
         android:id="@+id/save"
@@ -134,6 +144,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:text="Save User Information" />
+
 
 
 </LinearLayout>
